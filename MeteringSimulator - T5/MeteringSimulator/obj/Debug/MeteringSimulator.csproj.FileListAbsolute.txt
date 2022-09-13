@@ -1,0 +1,14 @@
+C:\Users\Dejan\Desktop\MeteringSimulator - T5\MeteringSimulator\bin\Debug\MeteringSimulator.exe.config
+C:\Users\Dejan\Desktop\MeteringSimulator - T5\MeteringSimulator\bin\Debug\MeteringSimulator.exe
+C:\Users\Dejan\Desktop\MeteringSimulator - T5\MeteringSimulator\bin\Debug\MeteringSimulator.pdb
+C:\Users\Dejan\Desktop\MeteringSimulator - T5\MeteringSimulator\obj\Debug\MainWindow.g.cs
+C:\Users\Dejan\Desktop\MeteringSimulator - T5\MeteringSimulator\obj\Debug\App.g.cs
+C:\Users\Dejan\Desktop\MeteringSimulator - T5\MeteringSimulator\obj\Debug\MeteringSimulator_MarkupCompile.cache
+C:\Users\Dejan\Desktop\MeteringSimulator - T5\MeteringSimulator\obj\Debug\MeteringSimulator_MarkupCompile.lref
+C:\Users\Dejan\Desktop\MeteringSimulator - T5\MeteringSimulator\obj\Debug\MainWindow.baml
+C:\Users\Dejan\Desktop\MeteringSimulator - T5\MeteringSimulator\obj\Debug\MeteringSimulator.g.resources
+C:\Users\Dejan\Desktop\MeteringSimulator - T5\MeteringSimulator\obj\Debug\MeteringSimulator.Properties.Resources.resources
+C:\Users\Dejan\Desktop\MeteringSimulator - T5\MeteringSimulator\obj\Debug\MeteringSimulator.csproj.GenerateResource.cache
+C:\Users\Dejan\Desktop\MeteringSimulator - T5\MeteringSimulator\obj\Debug\MeteringSimulator.csproj.CoreCompileInputs.cache
+C:\Users\Dejan\Desktop\MeteringSimulator - T5\MeteringSimulator\obj\Debug\MeteringSimulator.exe
+C:\Users\Dejan\Desktop\MeteringSimulator - T5\MeteringSimulator\obj\Debug\MeteringSimulator.pdb

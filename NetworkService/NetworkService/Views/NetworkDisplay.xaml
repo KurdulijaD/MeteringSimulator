@@ -1,0 +1,392 @@
+﻿<UserControl x:Class="NetworkService.Views.NetworkDisplay"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:NetworkService.Views"
+             xmlns:viewModel="clr-namespace:NetworkService.ViewModel"
+             xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+             mc:Ignorable="d" Width="610" Height="550">
+
+    <UserControl.DataContext>
+        <viewModel:NetworkDisplayViewModel/>
+    </UserControl.DataContext>
+
+    <Canvas Background="#FFE5E5E5">
+        <StackPanel Orientation="Horizontal" Margin="5">
+            <StackPanel Orientation="Vertical">
+                <Border Width="100" Height="100" Background="GhostWhite">
+                    <Canvas Name="canvas0" Background="{Binding CanvasObjekti[0].Background}" ToolTipService.IsEnabled="{Binding ToolTips}" ToolTip="Prikaz stanja entiteta" Height="100" Width="100" AllowDrop="True" Canvas.Left="30" Canvas.Top="12">
+                        <TextBlock Width="100" Text="{Binding CanvasObjekti[0].Text}" Foreground="{Binding CanvasObjekti[0].Foreground}" Canvas.Left="0" Canvas.Top="45" Height="35" TextWrapping="Wrap" TextAlignment="Center" Margin="-3" />
+                        <i:Interaction.Triggers>
+                            <i:EventTrigger EventName="Drop" >
+                                <i:InvokeCommandAction Command="{Binding DropCommand}" CommandParameter="{Binding ElementName=canvas0}" />
+                            </i:EventTrigger>
+                            <i:EventTrigger EventName="dragOver" >
+                                <i:InvokeCommandAction Command="{Binding DragOverCommand}" CommandParameter="{Binding ElementName=canvas0}" />
+                            </i:EventTrigger>
+                            <i:EventTrigger EventName="MouseLeftButtonUp" >
+                                <i:InvokeCommandAction Command="{Binding MouseLeftButtonUpCommand}" />
+                            </i:EventTrigger>
+                        </i:Interaction.Triggers>
+                        <Canvas.InputBindings>
+                            <MouseBinding MouseAction="LeftClick" Command="{Binding MouseLeftButtonDownCommand}" 
+                                  CommandParameter="{Binding ElementName=canvas0}"/>
+                        </Canvas.InputBindings>
+                    </Canvas>
+                </Border>
+                <Button Command="{Binding ButtonCommand}" CommandParameter="{Binding ElementName=canvas0}" ToolTipService.IsEnabled="{Binding ToolTips}" ToolTip="Dugme za oslobadjanje mjesta" Width="100" Content="Free"  Margin="0 5" />
+
+                <Border Width="100" Height="100" Background="GhostWhite">
+                    <Canvas Name="canvas4" Height="100" Width="100" Background="{Binding CanvasObjekti[4].Background}" ToolTipService.IsEnabled="{Binding ToolTips}" ToolTip="Prikaz stanja entiteta" AllowDrop="True" Canvas.Left="30" Canvas.Top="12">
+                        <TextBlock Width="100" Foreground="{Binding CanvasObjekti[0].Foreground}" Canvas.Left="0" Margin="-3" Canvas.Top="45" Height="35"  TextWrapping="Wrap" TextAlignment="Center" Text="{Binding CanvasObjekti[4].Text}"/>
+                        <i:Interaction.Triggers>
+                            <i:EventTrigger EventName="Drop" >
+                                <i:InvokeCommandAction Command="{Binding DropCommand}" CommandParameter="{Binding ElementName=canvas4}" />
+                            </i:EventTrigger>
+                            <i:EventTrigger EventName="dragOver" >
+                                <i:InvokeCommandAction Command="{Binding DragOverCommand}" CommandParameter="{Binding ElementName=canvas4}" />
+                            </i:EventTrigger>
+                            <i:EventTrigger EventName="MouseLeftButtonUp" >
+                                <i:InvokeCommandAction Command="{Binding MouseLeftButtonUpCommand}" />
+                            </i:EventTrigger>
+                        </i:Interaction.Triggers>
+                        <Canvas.InputBindings>
+                            <MouseBinding MouseAction="LeftClick" Command="{Binding MouseLeftButtonDownCommand}" 
+                                  CommandParameter="{Binding ElementName=canvas4}"/>
+                        </Canvas.InputBindings>
+                    </Canvas>
+                </Border>
+                <Button Command="{Binding ButtonCommand}" CommandParameter="{Binding ElementName=canvas4}" ToolTipService.IsEnabled="{Binding ToolTips}" ToolTip="Dugme za oslobadjanje mjesta" Width="100" Content="Free" Margin="0 5" />
+
+                <Border Width="100" Height="100" Background="GhostWhite">
+                    <Canvas Name="canvas8" Background="{Binding CanvasObjekti[8].Background}" ToolTipService.IsEnabled="{Binding ToolTips}" ToolTip="Prikaz stanja entiteta" Height="100" Width="100" AllowDrop="True" Canvas.Left="30" Canvas.Top="12">
+                        <TextBlock Width="100" Text="{Binding CanvasObjekti[8].Text}" Foreground="{Binding CanvasObjekti[0].Foreground}" Canvas.Left="0" Canvas.Top="45" Height="35" TextWrapping="Wrap" TextAlignment="Center" Margin="-3" />
+                        <i:Interaction.Triggers>
+                            <i:EventTrigger EventName="Drop" >
+                                <i:InvokeCommandAction Command="{Binding DropCommand}" CommandParameter="{Binding ElementName=canvas8}" />
+                            </i:EventTrigger>
+                            <i:EventTrigger EventName="dragOver" >
+                                <i:InvokeCommandAction Command="{Binding DragOverCommand}" CommandParameter="{Binding ElementName=canvas8}" />
+                            </i:EventTrigger>
+                            <i:EventTrigger EventName="MouseLeftButtonUp" >
+                                <i:InvokeCommandAction Command="{Binding MouseLeftButtonUpCommand}" />
+                            </i:EventTrigger>
+                        </i:Interaction.Triggers>
+                        <Canvas.InputBindings>
+                            <MouseBinding MouseAction="LeftClick" Command="{Binding MouseLeftButtonDownCommand}" 
+                                  CommandParameter="{Binding ElementName=canvas8}"/>
+                        </Canvas.InputBindings>
+                    </Canvas>
+                </Border>
+                <Button Command="{Binding ButtonCommand}" CommandParameter="{Binding ElementName=canvas8}" ToolTipService.IsEnabled="{Binding ToolTips}" ToolTip="Dugme za oslobadjanje mjesta" Width="100" Content="Free" Margin="0 5" />
+
+                <Border Width="100" Height="100" Background="GhostWhite">
+                    <Canvas Name="canvas12" Background="{Binding CanvasObjekti[12].Background}" ToolTipService.IsEnabled="{Binding ToolTips}" ToolTip="Prikaz stanja entiteta" Height="100" Width="100" AllowDrop="True" Canvas.Left="30" Canvas.Top="12">
+                        <TextBlock Width="100" Text="{Binding CanvasObjekti[12].Text}" Foreground="{Binding CanvasObjekti[0].Foreground}" Canvas.Left="0" Canvas.Top="45" Height="35" TextWrapping="Wrap" TextAlignment="Center" Margin="-3" />
+                        <i:Interaction.Triggers>
+                            <i:EventTrigger EventName="Drop" >
+                                <i:InvokeCommandAction Command="{Binding DropCommand}" CommandParameter="{Binding ElementName=canvas12}" />
+                            </i:EventTrigger>
+                            <i:EventTrigger EventName="dragOver" >
+                                <i:InvokeCommandAction Command="{Binding DragOverCommand}" CommandParameter="{Binding ElementName=canvas12}" />
+                            </i:EventTrigger>
+                            <i:EventTrigger EventName="MouseLeftButtonUp" >
+                                <i:InvokeCommandAction Command="{Binding MouseLeftButtonUpCommand}" />
+                            </i:EventTrigger>
+                        </i:Interaction.Triggers>
+                        <Canvas.InputBindings>
+                            <MouseBinding MouseAction="LeftClick" Command="{Binding MouseLeftButtonDownCommand}" 
+                                  CommandParameter="{Binding ElementName=canvas12}"/>
+                        </Canvas.InputBindings>
+                    </Canvas>
+                </Border>
+                <Button Command="{Binding ButtonCommand}" CommandParameter="{Binding ElementName=canvas12}" ToolTipService.IsEnabled="{Binding ToolTips}" ToolTip="Dugme za oslobadjanje mjesta" Width="100" Content="Free" Margin="0 5" />
+            </StackPanel>
+            <Separator Margin="2"/>
+            <StackPanel Orientation="Vertical">
+                <Border Width="100" Height="100" Background="GhostWhite">
+                    <Canvas Name="canvas1" Background="{Binding CanvasObjekti[1].Background}" ToolTipService.IsEnabled="{Binding ToolTips}" ToolTip="Prikaz stanja entiteta" Height="100" Width="100" AllowDrop="True" Canvas.Left="30" Canvas.Top="12">
+                        <TextBlock Width="100" Text="{Binding CanvasObjekti[1].Text}" Foreground="{Binding CanvasObjekti[0].Foreground}" Canvas.Left="0" Canvas.Top="45" Height="35" TextWrapping="Wrap" TextAlignment="Center" Margin="-3" />
+                        <i:Interaction.Triggers>
+                            <i:EventTrigger EventName="Drop" >
+                                <i:InvokeCommandAction Command="{Binding DropCommand}" CommandParameter="{Binding ElementName=canvas1}" />
+                            </i:EventTrigger>
+                            <i:EventTrigger EventName="dragOver" >
+                                <i:InvokeCommandAction Command="{Binding DragOverCommand}" CommandParameter="{Binding ElementName=canvas1}" />
+                            </i:EventTrigger>
+                            <i:EventTrigger EventName="MouseLeftButtonUp" >
+                                <i:InvokeCommandAction Command="{Binding MouseLeftButtonUpCommand}" />
+                            </i:EventTrigger>
+                        </i:Interaction.Triggers>
+                        <Canvas.InputBindings>
+                            <MouseBinding MouseAction="LeftClick" Command="{Binding MouseLeftButtonDownCommand}" 
+                                  CommandParameter="{Binding ElementName=canvas1}"/>
+                        </Canvas.InputBindings>
+                    </Canvas>
+                </Border>
+                <Button Command="{Binding ButtonCommand}" CommandParameter="{Binding ElementName=canvas1}" ToolTipService.IsEnabled="{Binding ToolTips}" ToolTip="Dugme za oslobadjanje mjesta" Width="100" Content="Free" Margin="0 5" />
+
+                <Border Width="100" Height="100" Background="GhostWhite">
+                    <Canvas Name="canvas5" Background="{Binding CanvasObjekti[5].Background}" ToolTipService.IsEnabled="{Binding ToolTips}" ToolTip="Prikaz stanja entiteta" Height="100" Width="100" AllowDrop="True" Canvas.Left="30" Canvas.Top="12">
+                        <TextBlock Width="100" Text="{Binding CanvasObjekti[5].Text}" Foreground="{Binding CanvasObjekti[0].Foreground}" Canvas.Left="0" Canvas.Top="45" Height="35" TextWrapping="Wrap" TextAlignment="Center" Margin="-3" />
+                        <i:Interaction.Triggers>
+                            <i:EventTrigger EventName="Drop" >
+                                <i:InvokeCommandAction Command="{Binding DropCommand}" CommandParameter="{Binding ElementName=canvas5}" />
+                            </i:EventTrigger>
+                            <i:EventTrigger EventName="dragOver" >
+                                <i:InvokeCommandAction Command="{Binding DragOverCommand}" CommandParameter="{Binding ElementName=canvas5}" />
+                            </i:EventTrigger>
+                            <i:EventTrigger EventName="MouseLeftButtonUp" >
+                                <i:InvokeCommandAction Command="{Binding MouseLeftButtonUpCommand}" />
+                            </i:EventTrigger>
+                        </i:Interaction.Triggers>
+                        <Canvas.InputBindings>
+                            <MouseBinding MouseAction="LeftClick" Command="{Binding MouseLeftButtonDownCommand}" 
+                                  CommandParameter="{Binding ElementName=canvas5}"/>
+                        </Canvas.InputBindings>
+                    </Canvas>
+                </Border>
+                <Button Command="{Binding ButtonCommand}" CommandParameter="{Binding ElementName=canvas5}" ToolTipService.IsEnabled="{Binding ToolTips}" ToolTip="Dugme za oslobadjanje mjesta" Width="100" Content="Free" Margin="0 5" />
+
+                <Border Width="100" Height="100" Background="GhostWhite">
+                    <Canvas Name="canvas9" Background="{Binding CanvasObjekti[9].Background}" ToolTipService.IsEnabled="{Binding ToolTips}" ToolTip="Prikaz stanja entiteta" Height="100" Width="100" AllowDrop="True" Canvas.Left="30" Canvas.Top="12">
+                        <TextBlock Width="100" Text="{Binding CanvasObjekti[9].Text}" Foreground="{Binding CanvasObjekti[0].Foreground}" Canvas.Left="0" Canvas.Top="45" Height="35" TextWrapping="Wrap" TextAlignment="Center" Margin="-3" />
+                        <i:Interaction.Triggers>
+                            <i:EventTrigger EventName="Drop" >
+                                <i:InvokeCommandAction Command="{Binding DropCommand}" CommandParameter="{Binding ElementName=canvas9}" />
+                            </i:EventTrigger>
+                            <i:EventTrigger EventName="dragOver" >
+                                <i:InvokeCommandAction Command="{Binding DragOverCommand}" CommandParameter="{Binding ElementName=canvas9}" />
+                            </i:EventTrigger>
+                            <i:EventTrigger EventName="MouseLeftButtonUp" >
+                                <i:InvokeCommandAction Command="{Binding MouseLeftButtonUpCommand}" />
+                            </i:EventTrigger>
+                        </i:Interaction.Triggers>
+                        <Canvas.InputBindings>
+                            <MouseBinding MouseAction="LeftClick" Command="{Binding MouseLeftButtonDownCommand}" 
+                                  CommandParameter="{Binding ElementName=canvas9}"/>
+                        </Canvas.InputBindings>
+                    </Canvas>
+                </Border>
+                <Button Command="{Binding ButtonCommand}" CommandParameter="{Binding ElementName=canvas9}" ToolTipService.IsEnabled="{Binding ToolTips}" ToolTip="Dugme za oslobadjanje mjesta" Width="100" Content="Free" Margin="0 5" />
+
+                <Border Width="100" Height="100" Background="GhostWhite">
+                    <Canvas Name="canvas13" Background="{Binding CanvasObjekti[13].Background}" ToolTipService.IsEnabled="{Binding ToolTips}" ToolTip="Prikaz stanja entiteta" Height="100" Width="100" AllowDrop="True" Canvas.Left="30" Canvas.Top="12">
+                        <TextBlock Width="100" Text="{Binding CanvasObjekti[13].Text}" Foreground="{Binding CanvasObjekti[0].Foreground}" Canvas.Left="0" Canvas.Top="45" Height="35" TextWrapping="Wrap" TextAlignment="Center" Margin="-3" />
+                        <i:Interaction.Triggers>
+                            <i:EventTrigger EventName="Drop" >
+                                <i:InvokeCommandAction Command="{Binding DropCommand}" CommandParameter="{Binding ElementName=canvas13}" />
+                            </i:EventTrigger>
+                            <i:EventTrigger EventName="dragOver" >
+                                <i:InvokeCommandAction Command="{Binding DragOverCommand}" CommandParameter="{Binding ElementName=canvas13}" />
+                            </i:EventTrigger>
+                            <i:EventTrigger EventName="MouseLeftButtonUp" >
+                                <i:InvokeCommandAction Command="{Binding MouseLeftButtonUpCommand}" />
+                            </i:EventTrigger>
+                        </i:Interaction.Triggers>
+                        <Canvas.InputBindings>
+                            <MouseBinding MouseAction="LeftClick" Command="{Binding MouseLeftButtonDownCommand}" 
+                                  CommandParameter="{Binding ElementName=canvas13}"/>
+                        </Canvas.InputBindings>
+                    </Canvas>
+                </Border>
+                <Button Command="{Binding ButtonCommand}" CommandParameter="{Binding ElementName=canvas13}" ToolTipService.IsEnabled="{Binding ToolTips}" ToolTip="Dugme za oslobadjanje mjesta" Width="100" Content="Free" Margin="0 5" />
+            </StackPanel>
+            <Separator Margin="2"/>
+            <StackPanel Orientation="Vertical">
+                <Border Width="100" Height="100" Background="GhostWhite">
+                    <Canvas Name="canvas2" Background="{Binding CanvasObjekti[2].Background}" ToolTipService.IsEnabled="{Binding ToolTips}" ToolTip="Prikaz stanja entiteta" Height="100" Width="100" AllowDrop="True" Canvas.Left="30" Canvas.Top="12">
+                        <TextBlock Width="100" Text="{Binding CanvasObjekti[2].Text}" Foreground="{Binding CanvasObjekti[0].Foreground}" Canvas.Left="0" Canvas.Top="45" Height="35" TextWrapping="Wrap" TextAlignment="Center" Margin="-3" />
+                        <i:Interaction.Triggers>
+                            <i:EventTrigger EventName="Drop" >
+                                <i:InvokeCommandAction Command="{Binding DropCommand}" CommandParameter="{Binding ElementName=canvas2}" />
+                            </i:EventTrigger>
+                            <i:EventTrigger EventName="dragOver" >
+                                <i:InvokeCommandAction Command="{Binding DragOverCommand}" CommandParameter="{Binding ElementName=canvas2}" />
+                            </i:EventTrigger>
+                            <i:EventTrigger EventName="MouseLeftButtonUp" >
+                                <i:InvokeCommandAction Command="{Binding MouseLeftButtonUpCommand}" />
+                            </i:EventTrigger>
+                        </i:Interaction.Triggers>
+                        <Canvas.InputBindings>
+                            <MouseBinding MouseAction="LeftClick" Command="{Binding MouseLeftButtonDownCommand}" 
+                                  CommandParameter="{Binding ElementName=canvas2}"/>
+                        </Canvas.InputBindings>
+                    </Canvas>
+                </Border>
+                <Button Command="{Binding ButtonCommand}" CommandParameter="{Binding ElementName=canvas2}" ToolTipService.IsEnabled="{Binding ToolTips}" ToolTip="Dugme za oslobadjanje mjesta" Width="100" Content="Free" Margin="0 5" />
+
+                <Border Width="100" Height="100" Background="GhostWhite">
+                    <Canvas Name="canvas6" Background="{Binding CanvasObjekti[6].Background}" ToolTipService.IsEnabled="{Binding ToolTips}" ToolTip="Prikaz stanja entiteta" Height="100" Width="100" AllowDrop="True" Canvas.Left="30" Canvas.Top="12">
+                        <TextBlock Width="100" Text="{Binding CanvasObjekti[6].Text}" Foreground="{Binding CanvasObjekti[0].Foreground}" Canvas.Left="0" Canvas.Top="45" Height="35" TextWrapping="Wrap" TextAlignment="Center" Margin="-3" />
+                        <i:Interaction.Triggers>
+                            <i:EventTrigger EventName="Drop" >
+                                <i:InvokeCommandAction Command="{Binding DropCommand}" CommandParameter="{Binding ElementName=canvas6}" />
+                            </i:EventTrigger>
+                            <i:EventTrigger EventName="dragOver" >
+                                <i:InvokeCommandAction Command="{Binding DragOverCommand}" CommandParameter="{Binding ElementName=canvas6}" />
+                            </i:EventTrigger>
+                            <i:EventTrigger EventName="MouseLeftButtonUp" >
+                                <i:InvokeCommandAction Command="{Binding MouseLeftButtonUpCommand}" />
+                            </i:EventTrigger>
+                        </i:Interaction.Triggers>
+                        <Canvas.InputBindings>
+                            <MouseBinding MouseAction="LeftClick" Command="{Binding MouseLeftButtonDownCommand}" 
+                                  CommandParameter="{Binding ElementName=canvas6}"/>
+                        </Canvas.InputBindings>
+                    </Canvas>
+                </Border>
+                <Button Command="{Binding ButtonCommand}" CommandParameter="{Binding ElementName=canvas6}" ToolTipService.IsEnabled="{Binding ToolTips}" ToolTip="Dugme za oslobadjanje mjesta" Width="100" Content="Free" Margin="0 5" />
+
+                <Border Width="100" Height="100" Background="GhostWhite">
+                    <Canvas Name="canvas10" Background="{Binding CanvasObjekti[10].Background}" ToolTipService.IsEnabled="{Binding ToolTips}" ToolTip="Prikaz stanja entiteta" Height="100" Width="100" AllowDrop="True" Canvas.Left="30" Canvas.Top="12">
+                        <TextBlock Width="100" Text="{Binding CanvasObjekti[10].Text}" Foreground="{Binding CanvasObjekti[0].Foreground}" Canvas.Left="0" Canvas.Top="45" Height="35" TextWrapping="Wrap" TextAlignment="Center" Margin="-3" />
+                        <i:Interaction.Triggers>
+                            <i:EventTrigger EventName="Drop" >
+                                <i:InvokeCommandAction Command="{Binding DropCommand}" CommandParameter="{Binding ElementName=canvas10}" />
+                            </i:EventTrigger>
+                            <i:EventTrigger EventName="dragOver" >
+                                <i:InvokeCommandAction Command="{Binding DragOverCommand}" CommandParameter="{Binding ElementName=canvas10}" />
+                            </i:EventTrigger>
+                            <i:EventTrigger EventName="MouseLeftButtonUp" >
+                                <i:InvokeCommandAction Command="{Binding MouseLeftButtonUpCommand}" />
+                            </i:EventTrigger>
+                        </i:Interaction.Triggers>
+                        <Canvas.InputBindings>
+                            <MouseBinding MouseAction="LeftClick" Command="{Binding MouseLeftButtonDownCommand}" 
+                                  CommandParameter="{Binding ElementName=canvas10}"/>
+                        </Canvas.InputBindings>
+                    </Canvas>
+                </Border>
+                <Button Command="{Binding ButtonCommand}" CommandParameter="{Binding ElementName=canvas10}" ToolTipService.IsEnabled="{Binding ToolTips}" ToolTip="Dugme za oslobadjanje mjesta" Width="100" Content="Free" Margin="0 5" />
+
+                <Border Width="100" Height="100" Background="GhostWhite">
+                    <Canvas Name="canvas14" Background="{Binding CanvasObjekti[14].Background}" ToolTipService.IsEnabled="{Binding ToolTips}" ToolTip="Prikaz stanja entiteta" Height="100" Width="100" AllowDrop="True" Canvas.Left="30" Canvas.Top="12">
+                        <TextBlock Width="100" Text="{Binding CanvasObjekti[14].Text}" Foreground="{Binding CanvasObjekti[0].Foreground}" Canvas.Left="0" Canvas.Top="45" Height="35" TextWrapping="Wrap" TextAlignment="Center" Margin="-3" />
+                        <i:Interaction.Triggers>
+                            <i:EventTrigger EventName="Drop" >
+                                <i:InvokeCommandAction Command="{Binding DropCommand}" CommandParameter="{Binding ElementName=canvas14}" />
+                            </i:EventTrigger>
+                            <i:EventTrigger EventName="dragOver" >
+                                <i:InvokeCommandAction Command="{Binding DragOverCommand}" CommandParameter="{Binding ElementName=canvas14}" />
+                            </i:EventTrigger>
+                            <i:EventTrigger EventName="MouseLeftButtonUp" >
+                                <i:InvokeCommandAction Command="{Binding MouseLeftButtonUpCommand}" />
+                            </i:EventTrigger>
+                        </i:Interaction.Triggers>
+                        <Canvas.InputBindings>
+                            <MouseBinding MouseAction="LeftClick" Command="{Binding MouseLeftButtonDownCommand}" 
+                                  CommandParameter="{Binding ElementName=canvas14}"/>
+                        </Canvas.InputBindings>
+                    </Canvas>
+                </Border>
+                <Button Command="{Binding ButtonCommand}" CommandParameter="{Binding ElementName=canvas14}" ToolTipService.IsEnabled="{Binding ToolTips}" ToolTip="Dugme za oslobadjanje mjesta" Width="100" Content="Free" Margin="0 5" />
+            </StackPanel>
+            <Separator Margin="2"/>
+            <StackPanel Orientation="Vertical">
+                <Border Width="100" Height="100" Background="GhostWhite">
+                    <Canvas Name="canvas3" Background="{Binding CanvasObjekti[3].Background}" ToolTipService.IsEnabled="{Binding ToolTips}" ToolTip="Prikaz stanja entiteta" Height="100" Width="100" AllowDrop="True" Canvas.Left="30" Canvas.Top="12">
+                        <TextBlock Width="100" Text="{Binding CanvasObjekti[3].Text}" Foreground="{Binding CanvasObjekti[0].Foreground}" Canvas.Left="0" Canvas.Top="45" Height="35" TextWrapping="Wrap" TextAlignment="Center" Margin="-3" />
+                        <i:Interaction.Triggers>
+                            <i:EventTrigger EventName="Drop" >
+                                <i:InvokeCommandAction Command="{Binding DropCommand}" CommandParameter="{Binding ElementName=canvas3}" />
+                            </i:EventTrigger>
+                            <i:EventTrigger EventName="dragOver" >
+                                <i:InvokeCommandAction Command="{Binding DragOverCommand}" CommandParameter="{Binding ElementName=canvas3}" />
+                            </i:EventTrigger>
+                            <i:EventTrigger EventName="MouseLeftButtonUp" >
+                                <i:InvokeCommandAction Command="{Binding MouseLeftButtonUpCommand}" />
+                            </i:EventTrigger>
+                        </i:Interaction.Triggers>
+                        <Canvas.InputBindings>
+                            <MouseBinding MouseAction="LeftClick" Command="{Binding MouseLeftButtonDownCommand}" 
+                                  CommandParameter="{Binding ElementName=canvas3}"/>
+                        </Canvas.InputBindings>
+                    </Canvas>
+                </Border>
+                <Button Command="{Binding ButtonCommand}" CommandParameter="{Binding ElementName=canvas3}" ToolTipService.IsEnabled="{Binding ToolTips}" ToolTip="Dugme za oslobadjanje mjesta" Width="100" Content="Free" Margin="0 5" />
+
+                <Border Width="100" Height="100" Background="GhostWhite">
+                    <Canvas Name="canvas7" Background="{Binding CanvasObjekti[7].Background}" ToolTipService.IsEnabled="{Binding ToolTips}" ToolTip="Prikaz stanja entiteta" Height="100" Width="100" AllowDrop="True" Canvas.Left="30" Canvas.Top="12">
+                        <TextBlock Width="100" Text="{Binding CanvasObjekti[7].Text}" Foreground="{Binding CanvasObjekti[0].Foreground}" Canvas.Left="0" Canvas.Top="45" Height="35" TextWrapping="Wrap" TextAlignment="Center" Margin="-3" />
+                        <i:Interaction.Triggers>
+                            <i:EventTrigger EventName="Drop" >
+                                <i:InvokeCommandAction Command="{Binding DropCommand}" CommandParameter="{Binding ElementName=canvas7}" />
+                            </i:EventTrigger>
+                            <i:EventTrigger EventName="dragOver" >
+                                <i:InvokeCommandAction Command="{Binding DragOverCommand}" CommandParameter="{Binding ElementName=canvas7}" />
+                            </i:EventTrigger>
+                            <i:EventTrigger EventName="MouseLeftButtonUp" >
+                                <i:InvokeCommandAction Command="{Binding MouseLeftButtonUpCommand}" />
+                            </i:EventTrigger>
+                        </i:Interaction.Triggers>
+                        <Canvas.InputBindings>
+                            <MouseBinding MouseAction="LeftClick" Command="{Binding MouseLeftButtonDownCommand}" 
+                                  CommandParameter="{Binding ElementName=canvas7}"/>
+                        </Canvas.InputBindings>
+                    </Canvas>
+                </Border>
+                <Button Command="{Binding ButtonCommand}" CommandParameter="{Binding ElementName=canvas7}" ToolTipService.IsEnabled="{Binding ToolTips}" ToolTip="Dugme za oslobadjanje mjesta" Width="100" Content="Free" Margin="0 5" />
+
+                <Border Width="100" Height="100" Background="GhostWhite">
+                    <Canvas Name="canvas11" Background="{Binding CanvasObjekti[11].Background}" ToolTipService.IsEnabled="{Binding ToolTips}" ToolTip="Prikaz stanja entiteta" Height="100" Width="100" AllowDrop="True" Canvas.Left="30" Canvas.Top="12">
+                        <TextBlock Width="100" Text="{Binding CanvasObjekti[11].Text}" Foreground="{Binding CanvasObjekti[0].Foreground}" Canvas.Left="0" Canvas.Top="45" Height="35" TextWrapping="Wrap" TextAlignment="Center" Margin="-3" />
+                        <i:Interaction.Triggers>
+                            <i:EventTrigger EventName="Drop" >
+                                <i:InvokeCommandAction Command="{Binding DropCommand}" CommandParameter="{Binding ElementName=canvas11}" />
+                            </i:EventTrigger>
+                            <i:EventTrigger EventName="dragOver" >
+                                <i:InvokeCommandAction Command="{Binding DragOverCommand}" CommandParameter="{Binding ElementName=canvas11}" />
+                            </i:EventTrigger>
+                            <i:EventTrigger EventName="MouseLeftButtonUp" >
+                                <i:InvokeCommandAction Command="{Binding MouseLeftButtonUpCommand}" />
+                            </i:EventTrigger>
+                        </i:Interaction.Triggers>
+                        <Canvas.InputBindings>
+                            <MouseBinding MouseAction="LeftClick" Command="{Binding MouseLeftButtonDownCommand}" 
+                                  CommandParameter="{Binding ElementName=canvas11}"/>
+                        </Canvas.InputBindings>
+                    </Canvas>
+                </Border>
+                <Button Command="{Binding ButtonCommand}" CommandParameter="{Binding ElementName=canvas11}" ToolTipService.IsEnabled="{Binding ToolTips}" ToolTip="Dugme za oslobadjanje mjesta" Width="100" Content="Free" Margin="0 5" />
+
+                <Border Width="100" Height="100" Background="GhostWhite">
+                    <Canvas Name="canvas15" Background="{Binding CanvasObjekti[15].Background}" ToolTipService.IsEnabled="{Binding ToolTips}" ToolTip="Prikaz stanja entiteta" Height="100" Width="100" AllowDrop="True" Canvas.Left="30" Canvas.Top="12">
+                        <TextBlock Width="100" Text="{Binding CanvasObjekti[15].Text}" Foreground="{Binding CanvasObjekti[0].Foreground}" Canvas.Left="0" Canvas.Top="45" Height="35" TextWrapping="Wrap" TextAlignment="Center" Margin="-3" />
+                        <i:Interaction.Triggers>
+                            <i:EventTrigger EventName="Drop" >
+                                <i:InvokeCommandAction Command="{Binding DropCommand}" CommandParameter="{Binding ElementName=canvas15}" />
+                            </i:EventTrigger>
+                            <i:EventTrigger EventName="dragOver" >
+                                <i:InvokeCommandAction Command="{Binding DragOverCommand}" CommandParameter="{Binding ElementName=canvas15}" />
+                            </i:EventTrigger>
+                            <i:EventTrigger EventName="MouseLeftButtonUp" >
+                                <i:InvokeCommandAction Command="{Binding MouseLeftButtonUpCommand}" />
+                            </i:EventTrigger>
+                        </i:Interaction.Triggers>
+                        <Canvas.InputBindings>
+                            <MouseBinding MouseAction="LeftClick" Command="{Binding MouseLeftButtonDownCommand}" 
+                                  CommandParameter="{Binding ElementName=canvas15}"/>
+                        </Canvas.InputBindings>
+                    </Canvas>
+                </Border>
+                <Button Command="{Binding ButtonCommand}" CommandParameter="{Binding ElementName=canvas15}" ToolTipService.IsEnabled="{Binding ToolTips}" ToolTip="Dugme za oslobadjanje mjesta" Width="100" Content="Free" Margin="0 5" />
+            </StackPanel>
+            <Separator Margin="10"/>
+            <ListView Width="150" x:Name="listViewObjects" Margin="15 0 15 0" ItemsSource="{Binding listaObjekata}" SelectedItem="{Binding SelectedZemljiste}" ToolTipService.IsEnabled="{Binding ToolTips}" ToolTip="Lista entiteta dostupnih za rasporedjivanje" Height="454">
+                <i:Interaction.Triggers>
+                    <i:EventTrigger EventName="SelectionChanged" >
+                        <i:InvokeCommandAction Command="{Binding SelectionChangedCommand}" CommandParameter="{Binding ElementName=listViewObjects}" />
+                    </i:EventTrigger>
+                    <i:EventTrigger EventName="MouseLeftButtonUp" >
+                        <i:InvokeCommandAction Command="{Binding MouseLeftButtonUpCommand}" />
+                    </i:EventTrigger>
+                </i:Interaction.Triggers>
+            </ListView>
+        </StackPanel>
+
+        <CheckBox Content="ToolTip" IsChecked="{Binding ToolTips}" ToolTipService.IsEnabled="{Binding ToolTips}" ToolTip="Dugme za o(ne)mogucavanje ToolTip-ova"  FontSize="12" Canvas.Left="542" Canvas.Top="10"/>
+
+    </Canvas>
+</UserControl>
